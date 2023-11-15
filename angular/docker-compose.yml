@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ARG_LINUX_LOCALE: en_US.UTF-8
+        ARG_USER_UID: ${ARG_USER_UID}
+        ARG_USER_GID: ${ARG_USER_GID}
+        ARG_ANGULAR_VERSION: 15.2.9
+        ARG_NODE_VERSION: 18.17.0
+        ARG_NPM_VERSION: 10.2.3
+    container_name: angular-app
+    working_dir: /home/user/project
+    extra_hosts:
+      - dockerhost:host-gateway
+    ports:
+      - 4200:4200
+    tty: true
+    volumes:
+      - app_local:/usr/local
+      - ~/.bash_history:/home/user/.bash_history
+      - .:/home/user/project
+volumes:
+  app_local:
