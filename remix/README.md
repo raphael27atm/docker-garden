@@ -2,8 +2,8 @@
 
 ```shell
 cd project
-  wget -nv https://raw.githubusercontent.com/raphael27atm/docker-garden/main/angular/docker-compose.yml
-  wget -nv https://raw.githubusercontent.com/raphael27atm/docker-garden/main/angular/Dockerfile
+  wget -nv https://raw.githubusercontent.com/raphael27atm/docker-garden/main/remix/docker-compose.yml
+  wget -nv https://raw.githubusercontent.com/raphael27atm/docker-garden/main/remix/Dockerfile
   ARG_USER_UID=$(id -u) ARG_USER_GID=$(id -g) docker compose config
   ARG_USER_UID=$(id -u) ARG_USER_GID=$(id -g) docker compose build
   docker compose up -d
