@@ -9,10 +9,8 @@ services:
         ARG_LINUX_LOCALE: en_US.UTF-8
         ARG_USER_UID: ${ARG_USER_UID}
         ARG_USER_GID: ${ARG_USER_GID}
-        ARG_ANGULAR_VERSION: 15.2.9
-        ARG_NODE_VERSION: 18.17.0
-        ARG_NPM_VERSION: 10.2.3
-    container_name: angular-app
+        ARG_GO_VERSION: 1.21.5
+    container_name: golang-app
     working_dir: /home/user/project
     extra_hosts:
       - dockerhost:host-gateway
